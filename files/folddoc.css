@@ -1,0 +1,38 @@
+.details summary {
+	width: -moz-fit-content; 
+	width: fit-content; 
+	direction: rtl;
+    padding: 0em;
+    background-color:white;
+}
+.details content {
+    display: block;
+    padding: 0em;
+    background-color:white;
+}
+/* 自定义的三角 */
+.details summary::after {
+    content: '';
+    position: absolute;
+    width: 0em; height: 0em;
+    margin: 0em;
+    background: url(./arrow-on.svg) no-repeat;
+    background-size: 100% 100%;
+    transition: transform .2s;
+}
+.details:not([open]) summary::after {
+    margin-top: 0em;
+    transform: rotate(90deg);    
+}
+/* 隐藏默认三角 */
+.details ::-webkit-details-marker {
+	display: none;
+	direction: ltr; 
+	color: gray; 
+	margin-left: .5ch;
+}
+.details ::-moz-list-bullet {
+	direction: ltr; 
+	color: gray; 
+	margin-left: .5ch;
+}
