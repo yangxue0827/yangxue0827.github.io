@@ -1,0 +1,196 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+html{
+ }
+body{
+    font-family: Palatino Linotype, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 13pt;
+}
+.profile-section{
+    background: #f7f7f7;
+}
+
+.news-section{
+    background: #f7f7f7;
+}
+
+.projects-section{
+    background: #f7f7f7;
+}
+
+
+.title{
+    font-size: 20pt;
+    font-weight: bold;
+}
+.subtitle{
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+
+.nav-item{
+    font-size: 12pt !important;
+    color: black;
+}
+
+.nav-menu{
+  color:black;
+}
+
+.cover-block {
+  padding-top: 50px;
+}
+
+.profile-link{
+  font-size: 13pt;
+}
+
+.profile-link a {
+  color: white;
+}
+.profile-link a:hover {
+  color: #DDDDDD;
+}
+
+.profile-block {
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 20px;
+}
+
+.profile-image-block {
+    vertical-align: middle;
+}
+
+.profile-content-block{
+    color: white;
+    padding-top: 10px !important;
+}
+
+.profile-photo{
+    border-radius: 125px !important;
+    border-color: white;
+    margin: 10px;
+}
+
+.profile-name{
+  font-size: 32px;
+  font-weight: bold;
+
+  font-family: Palatino Linotype, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.about-card{
+    border-radius: 40px;
+}
+
+
+.social-photo{
+    width: 70px !important;
+    margin-right: 10px;
+    padding-bottom: 10px;
+}
+
+.social-photo{
+    -webkit-transition: all 0.25s ease; /* Safari and Chrome */
+    -moz-transition: all 0.25s ease; /* Firefox */
+    -o-transition: all 0.25s ease; /* IE 9 */
+    -ms-transition: all 0.25s ease; /* Opera */
+    transition: all 0.25s ease;
+}
+.social-photo:hover {
+    -webkit-transform:scale(1.2); /* Safari and Chrome */
+    -moz-transform:scale(1.2); /* Firefox */
+    -ms-transform:scale(1.2); /* IE 9 */
+    -o-transform:scale(1.2); /* Opera */
+     transform:scale(1.2);
+}
+
+
+.collection {
+    border: 0px !important;
+}
+.collection-item{
+    border: 0px !important;
+}
+
+.icon {
+    width: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.news-date {
+    width: 120px !important;
+}
+
+.test{
+    border: 10px solid;
+}
+
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #home .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #home .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .profile-content-block {
+    text-align: center;
+  }
+}
+
+
+.paper-title{
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.paper-author{
+  font-size: 16px !important;
+  margin-top: 10px;
+}
+
+.paper-conf{
+  font-size: 16px !important;
+  font-style: italic !important;
+}
+
+a {
+  color: #002db3;
+}
+a:hover{
+  color: #3366ff;
+}
+
+.publication-hr{
+  border: 0;
+  border-top: 1px solid #DDDDDD;
+}
