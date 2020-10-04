@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://thinklab.sjtu.edu.cn/CSL_GCL_OHDet.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSL_GCL_OHDet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="../image/png" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSL_GCL_OHDet/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSL_GCL_OHDet/page.css">
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>   
+     <link rel="stylesheet" href="./CSL_GCL_OHDet/bootstrap.min.css">
+ 
+</head>
+
+<body>
+ 
+          <script src="./CSL_GCL_OHDet/jquery.min.js.下载"></script>
+      <script src="./CSL_GCL_OHDet/bootstrap.min.js.下载"></script>
+    <div class="wrapper page">
+        <div class="main_content">
+                    <div class="caption"><b>On the Arbitrary-Oriented Object Detection: Classification based </br> Approaches Revisited</b></div>
+        <div class="caption_line"></div>
+
+            <div class="subtitle"><b>Abstract</b></div>
+            <div class="title_line"></div>
+
+    <h4 class="ui top dividing header" id="basics">Abstract</h4>
+    <div class="ui basic segment">
+      <p> Arbitrary-oriented object detection has been a building block for rotation sensitive tasks. We first show that the problem of discontinuous boundaries suffered in existing dominant regression-based rotation detectors, is caused by angular periodicity or corner ordering, according to the parameterization protocol. We also show that the root cause is that the ideal predictions can be out of the defined range. Accordingly, we transform the angular prediction task from a regression problem to a classification one. For the resulting circularly distributed angle classification problem, we first devise a Circular Smooth Label (CSL) technique to handle the periodicity of angle and increase the error tolerance to adjacent angles. To reduce the excessive model parameters by CSL, we further design a Gray Coded Label (GCL), which greatly reduces the length of the encoding. Finally, we further develop an object heading detection module, which can be useful when the exact heading orientation information is needed e.g. for ship and plane heading detection. We release our OHD-SJTU dataset and OHDet detector for heading detection. Results on three large-scale public datasets for aerial images i.e. DOTA, HRSC2016, OHD-SJTU, as well as scene text dataset ICDAR2015 and MLT, show the effectiveness of our approach. </p>
+
+	<div class="subtitle"><b>Authors</b></div>
+	<div class="title_line"></div>	  
+	<div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+        <ul>
+        <li> <a href="https://yangxue0827.github.io/">Xue Yang</a>, Shanghai Jiao Tong University, China </li>
+        <li> <a href="http://thinklab.sjtu.edu.cn/">Junchi Yan</a> (corresponding author), Shanghai Jiao Tong University, China </li>
+        <li> <a href="http://www.cowarobot.com/">Tao He</a>, COWAROBOT Co., Ltd, China </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+
+            
+    <div class="subtitle"><b>Paper &amp; Code &amp; Dataset</b></div>
+    <div class="title_line"></div> 
+    <div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+        <ul>
+          <li>ECCV Paper (CSL): <a href="http://www.ecva.net/papers/eccv_2020/papers_ECCV/html/666_ECCV_2020_paper.php">[ecva]</a><a href="https://arxiv.org/abs/2003.05597">[arxiv]</a></li>
+          <li>PAMI Submission Paper: <a href="https://yangxue0827.github.io/">[homepage]</a></li>
+          <li>CSL Code: <a href="https://github.com/Thinklab-SJTU/CSL_RetinaNet_Tensorflow">[CSL-RetinaNet]</a></li>
+          <li>GCL Code: <a href="https://github.com/Thinklab-SJTU/DCL_RetinaNet_Tensorflow">[GCL-RetinaNet]</a></li>
+          <li>OHDet Code: <a href="https://github.com/SJTU-Thinklab-Det/OHDet_Tensorflow">[OHDet]</a></li>
+          <li>Dataset: <a href="./OHD-SJTU.html">[OHD-SJTU]</a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="subtitle"><b>Approach</b></div>
+    <div class="title_line"></div> 
+    <div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+          OHDet can be applied to rotation detection and object heading detection. Its structure combines many of my previous research contents, including <b>R<sup>3</sup>Det</b>, <b>IoU-Smooth L1 Loss</b>, <b>CSL</b>, etc. The figure below is the architecture of the proposed detector (RetinaNet as an embodiment).</br></br> 
+          <img src="./CSL_GCL_OHDet/pipeline.png" width="1000"></br></br> 
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="subtitle"><b>Performance</b></div>
+    <div class="title_line"></div> 
+    <div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+            <p> Performance on <b>OBB</b> task of DOTA dataset:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Method</b></th><th>Backbone</th><th>PL</th><th>BD</th><th>BR</th><th>GTF</th><th>SV</th><th>LV</th><th>SH</th><th>TC</th><th>BC</th><th>ST</th><th>SBF</th><th>RA</th><th>HA</th><th>SP</th><th>HC</th><th><b>mAP</b></th></tr>
+            <tr><td><b>FR-O</b></td><td>ResNet101</td><td>79.09</td><td>69.12</td><td>17.17</td><td>63.49</td><td>34.20</td><td>37.16</td><td>36.20</td><td>89.19</td><td>69.60</td><td>58.96</td><td>49.4</td><td>52.52</td><td>46.69</td><td>44.80</td><td>46.30</td><td>52.93</td></tr>
+            <tr><td><b>IENet</b></td><td>ResNet101</td><td>80.20</td><td>64.54</td><td>39.82</td><td>32.07</td><td>49.71</td><td>65.01</td><td>52.58</td><td>81.45</td><td>44.66</td><td>78.51</td><td>46.54</td><td>56.73</td><td>64.40</td><td>64.24</td><td>36.75</td><td>57.14</td></tr>
+            <tr><td><b>R-DFPN</b></td><td>ResNet101</td><td>80.92</td><td>65.82</td><td>33.77</td><td>58.94</td><td>55.77</td><td>50.94</td><td>54.78</td><td>90.33</td><td>66.34</td><td>68.66</td><td>48.73</td><td>51.76</td><td>55.10</td><td>51.32</td><td>35.88</td><td>57.94</td></tr>
+            <tr><td><b>TOSO</b></td><td>ResNet101</td><td>80.17</td><td>65.59</td><td>39.82</td><td>39.95</td><td>49.71</td><td>65.01</td><td>53.58</td><td>81.45</td><td>44.66</td><td>78.51</td><td>48.85</td><td>56.73</td><td>64.40</td><td>64.24</td><td>36.75</td><td>57.92</td></tr>
+            <tr><td><b>PIoU</b></td><td>DLA-34</td><td>80.9</td><td>69.7</td><td>24.1</td><td>60.2</td><td>38.3</td><td>64.4</td><td>64.8</td><td>90.9</td><td>77.2</td><td>70.4</td><td>46.5</td><td>37.1</td><td>57.1</td><td>61.9</td><td>64.0</td><td>60.5</td></tr>
+            <tr><td><b>R<sup>2</sup>CNN</b></td><td>ResNet101</td><td>80.94</td><td>65.67</td><td>35.34</td><td>67.44</td><td>59.92</td><td>50.91</td><td>55.81</td><td>90.67</td><td>66.92</td><td>72.39</td><td>55.06</td><td>52.23</td><td>55.14</td><td>53.35</td><td>48.22</td><td>60.67</td></tr>
+            <tr><td><b>RRPN</b></td><td>ResNet101</td><td>88.52</td><td>71.20</td><td>31.66</td><td>59.30</td><td>51.85</td><td>56.19</td><td>57.25</td><td>90.81</td><td>72.84</td><td>67.38</td><td>56.69</td><td>52.84</td><td>53.08</td><td>51.94</td><td>53.58</td><td>61.01</td></tr>
+            <tr><td><b>Axis Learning</b></td><td>ResNet101</td><td>79.53</td><td>77.15</td><td>38.59</td><td>61.15</td><td>67.53</td><td>70.49</td><td>76.30</td><td>89.66</td><td>79.07</td><td>83.53</td><td>47.27</td><td>61.01</td><td>56.28</td><td>66.06</td><td>36.05</td><td>65.98</td></tr>
+            <tr><td><b>ICN</b></td><td>ResNet101</td><td>81.40</td><td>74.30</td><td>47.70</td><td>70.30</td><td>64.90</td><td>67.80</td><td>70.00</td><td>90.80</td><td>79.10</td><td>78.20</td><td>53.60</td><td>62.90</td><td>67.00</td><td>64.20</td><td>50.20</td><td>68.20</td></tr>
+            <tr><td><b>RADet</b></td><td>ResNeXt101</td><td>79.45</td><td>76.99</td><td>48.05</td><td>65.83</td><td>65.46</td><td>74.40</td><td>68.86</td><td>89.70</td><td>78.14</td><td>74.97</td><td>49.92</td><td>64.63</td><td>66.14</td><td>71.58</td><td>62.16</td><td>69.09</td></tr>
+            <tr><td><b>RoI-Transformer</b></td><td>ResNet101</td><td>88.64</td><td>78.52</td><td>43.44</td><td>75.92</td><td>68.81</td><td>73.68</td><td>83.59</td><td>90.74</td><td>77.27</td><td>81.46</td><td>58.39</td><td>53.54</td><td>62.83</td><td>58.93</td><td>47.67</td><td>69.56</td></tr>
+            <tr><td><b>P-RSDet</b></td><td>ResNet101</td><td>89.02</td><td>73.65</td><td>47.33</td><td>72.03</td><td>70.58</td><td>73.71</td><td>72.76</td><td>90.82</td><td>80.12</td><td>81.32</td><td>59.45</td><td>57.87</td><td>60.79</td><td>65.21</td><td>52.59</td><td>69.82</td></tr>
+            <tr><td><b>CAD-Net</b></td><td>ResNet101</td><td>87.8</td><td>82.4</td><td>49.4</td><td>73.5</td><td>71.1</td><td>63.5</td><td>76.7</td><td>90.9</td><td>79.2</td><td>73.3</td><td>48.4</td><td>60.9</td><td>62.0</td><td>67.0</td><td>62.2</td><td>69.9</td></tr>
+            <tr><td><b>O<sup>2</sup>-DNet</b></td><td>Hourglass104</td><td>89.31</td><td>82.14</td><td>47.33</td><td>61.21</td><td>71.32</td><td>74.03</td><td>78.62</td><td>90.76</td><td>82.23</td><td>81.36</td><td>60.93</td><td>60.17</td><td>58.21</td><td>66.98</td><td>61.03</td><td>71.04</td></tr>
+            <tr><td><b>AOOD</b></td><td>ResNet101</td><td>89.99</td><td>81.25</td><td>44.50</td><td>73.20</td><td>68.90</td><td>60.33</td><td>66.86</td><td>90.89</td><td>80.99</td><td>86.23</td><td>64.98</td><td>63.88</td><td>65.24</td><td>68.36</td><td>62.13</td><td>71.18</td></tr>
+            <tr><td><b>Cascade-FF</b></td><td>ResNet152</td><td>89.9</td><td>80.4</td><td>51.7</td><td><b>77.4</b></td><td>68.2</td><td>75.2</td><td>75.6</td><td>90.8</td><td>78.8</td><td>84.4</td><td>62.3</td><td>64.6</td><td>57.7</td><td>69.4</td><td>50.1</td><td>71.8</td></tr>
+            <tr><td><b>BBAVectors</b></td><td>ResNet101</td><td>88.35</td><td>79.96</td><td>50.69</td><td>62.18</td><td>78.43</td><td><b>78.98</b></td><td><b>87.94</b></td><td>90.85</td><td>83.58</td><td>84.35</td><td>54.13</td><td>60.24</td><td>65.22</td><td>64.28</td><td>55.70</td><td>72.32</td></tr>
+            <tr><td><b>SCRDet</b></td><td>ResNet101</td><td>89.98</td><td>80.65</td><td>52.09</td><td>68.36</td><td>68.36</td><td>60.32</td><td>72.41</td><td>90.85</td><td><b>87.94</b></td><td><b>86.86</b></td><td>65.02</td><td>66.68</td><td>66.25</td><td>68.24</td><td>65.21</td><td>72.61</td></tr>
+            <tr><td><b>SARD</b></td><td>ResNet101</td><td>89.93</td><td>84.11</td><td>54.19</td><td>72.04</td><td>68.41</td><td>61.18</td><td>66.00</td><td>90.82</td><td>87.79</td><td>86.59</td><td>65.65</td><td>64.04</td><td>66.68</td><td>68.84</td><td>68.03</td><td>72.95</td></tr>
+            <tr><td><b>GLS-Net</b></td><td>ResNet101</td><td>88.65</td><td>77.40</td><td>51.20</td><td>71.03</td><td>73.30</td><td>72.16</td><td>84.68</td><td>90.87</td><td>80.43</td><td>85.38</td><td>58.33</td><td>62.27</td><td>67.58</td><td>70.69</td><td>60.42</td><td>72.96</td></tr>
+            <tr><td><b>DRN</b></td><td>Hourglass104</td><td>89.71</td><td>82.34</td><td>47.22</td><td>64.10</td><td>76.22</td><td>74.43</td><td>85.84</td><td>90.57</td><td>86.18</td><td>84.89</td><td>57.65</td><td>61.93</td><td>69.30</td><td>69.63</td><td>58.48</td><td>73.23</td></tr>
+            <tr><td><b>FADet</b></td><td>ResNet101</td><td>90.21</td><td>79.58</td><td>45.49</td><td>76.41</td><td>73.18</td><td>68.27</td><td>79.56</td><td>90.83</td><td>83.40</td><td>84.68</td><td>53.40</td><td>65.42</td><td>74.17</td><td>69.69</td><td>64.86</td><td>73.28</td></tr>
+            <tr><td><b>MFIAR-Net</b></td><td>ResNet152</td><td>89.62</td><td>84.03</td><td>52.41</td><td>70.30</td><td>70.13</td><td>67.64</td><td>77.81</td><td>90.85</td><td>85.40</td><td>86.22</td><td>63.21</td><td>64.14</td><td>68.31</td><td>70.21</td><td>62.11</td><td>73.49</td></tr> 
+            <tr><td><b>R<sup>3</sup>Det</b></td><td>ResNet152</td><td>89.24</td><td>80.81</td><td>51.11</td><td>65.62</td><td>70.67</td><td>76.03</td><td>78.32</td><td>90.83</td><td>84.89</td><td>84.42</td><td>65.10</td><td>57.18</td><td>68.10</td><td>68.98</td><td>60.88</td><td>72.81</td></tr>
+            <tr><td><b>RSDet</b></td><td>ResNet152</td><td>90.1</td><td>82.0</td><td>53.8</td><td>68.5</td><td>70.2</td><td>78.7</td><td>73.6</td><td><b>91.2</b></td><td>87.1</td><td>84.7</td><td>64.3</td><td>68.2</td><td>66.1</td><td>69.3</td><td>63.7</td><td>74.1</td></tr>
+            <tr><td><b>Gliding Vertex</b></td><td>ResNet101</td><td>89.64</td><td>85.00</td><td>52.26</td><td>77.34</td><td>73.01</td><td>73.14</td><td>86.82</td><td>90.74</td><td>79.02</td><td>86.81</td><td>59.55</td><td><b>70.91</b></td><td>72.94</td><td>70.86</td><td>57.32</td><td>75.02</td></tr>
+            <tr><td><b>Mask OBB</b></td><td> ResNeXt101</td><td>89.56</td><td><b>85.95</b></td><td>54.21</td><td>72.90</td><td>76.52</td><td>74.16</td><td>85.63</td><td>89.85</td><td>83.81</td><td>86.48</td><td>54.89</td><td>69.64</td><td>73.94</td><td>69.06</td><td>63.32</td><td>75.33</td></tr>
+            <tr><td><b>FFA</b></td><td>ResNet101</td><td>90.1</td><td>82.7</td><td>54.2</td><td>75.2</td><td>71.0</td><td>79.9</td><td>83.5</td><td>90.7</td><td>83.9</td><td>84.6</td><td>61.2</td><td>68.0</td><td>70.7</td><td>76.0</td><td>63.7</td><td>75.7</td></tr>
+            <tr><td><b>APE</b></td><td>ResNeXt-101</td><td>89.96</td><td>83.62</td><td>53.42</td><td>76.03</td><td>74.01</td><td>77.16</td><td>79.45</td><td>90.83</td><td>87.15</td><td>84.51</td><td>67.72</td><td>60.33</td><td><b>74.61</b></td><td>71.84</td><td>65.55</td><td>75.75</td></tr>
+            <tr><td><b>CenterMap OBB</b></td><td>ResNet101</td><td>89.83</td><td>84.41</td><td>54.60</td><td>70.25</td><td>77.66</td><td>78.32</td><td>87.19</td><td>90.66</td><td>84.89</td><td>85.27</td><td>56.46</td><td>69.23</td><td>74.13</td><td>71.56</td><td>66.06</td><td>76.03</td></tr>
+            <tr><td><b>CSL</b></td><td>ResNet152</td><td><b>90.25</b></td><td>85.53</td><td>54.64</td><td>75.31</td><td>70.44</td><td>73.51</td><td>77.62</td><td>90.84</td><td>86.15</td><td>86.69</td><td><b>69.60</b></td><td>68.04</td><td>73.83</td><td>71.10</td><td><b>68.93</b></td><td><b>76.17</b></td></tr>
+            <tr><td><b>GCL</b></td><td>ResNet152</td><td>89.70</td><td>83.34</td><td><b>55.44</b></td><td>67.31</td><td><b>78.98</b></td><td>74.78</td><td>85.86</td><td>90.82</td><td>85.56</td><td>85.33</td><td>65.56</td><td>61.52</td><td>72.30</td><td><b>78.11</b></td><td>68.91</td><td>76.23</td></tr>
+            </tbody></table>
+            <p></p>
+
+            <br>
+
+            <p> We divide the training and validation images into 600x600 subimages with an overlap of 150 pixels and scale it to 800x800. In the process of cropping the image with the sliding window, keeping those objects whose center point is in the subimage. All experiments are based on the same setting, using ResNet101 as the backbone. Except for data augmentation (include random horizontal, vertical flipping, random graying, and random rotation) is used in OHD-SJTU-S, no other tricks are used.</p>
+
+            <p> Performance on <b>OBB</b> task of <b>OHD-SJTU-L</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Method</b></th><th>PL</th><th>SH</th><th>SV</th><th>LV</th><th>HA</th><th>HC</th><th><b>AP<sub>50</sub></b></th><th><b>AP<sub>75</sub></b></th><th><b>AP<sub>50:95</sub></b></th></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/R2CNN_Faster-RCNN_Tensorflow">R<sup>2</sup>CNN</a></b></td><td>89.99</td><td>71.93</td><td>54.00</td><td>65.46</td><td><b>66.36</b></td><td>55.94</td><td>67.28</td><td>32.69</td><td>34.78</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RRPN_Faster-RCNN_Tensorflow">RRPN</a></b></td><td>89.66</td><td>75.35</td><td>50.25</td><td>72.22</td><td>62.99</td><td>45.26</td><td>65.96</td><td>21.24</td><td>30.13</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-H</a></b></td><td><b>90.20</b></td><td>66.99</td><td>53.58</td><td>63.38</td><td>63.75</td><td>53.82</td><td>65.29</td><td>34.59</td><td>35.39</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-R</a></b></td><td>89.99</td><td>77.65</td><td>51.77</td><td><b>81.22</b></td><td>62.85</td><td>52.25</td><td>69.29</td><td>39.07</td><td>38.90</td></tr>
+            <tr><td><b><a href="https://github.com/Thinklab-SJTU/R3Det_Tensorflow">R<sup>3</sup>Det</a></b></td><td>89.89</td><td><b>78.36</b></td><td><b>55.23</b></td><td>78.35</td><td>57.06</td><td>53.50</td><td>68.73</td><td>35.36</td><td>37.10</td></tr>
+            <tr><td><b><a href="https://github.com/SJTU-Thinklab-Det/OHDet_Tensorflow">OHDet</a></b></td><td>89.72</td><td>77.40</td><td>52.89</td><td>78.72</td><td>63.76</td><td><b>54.62</b></td><td><b>69.52</b></td><td><b>41.89</b></td><td><b>39.51</b></td></tr>
+            </tbody></table>
+            <p></p>
+            
+            <br>
+
+            <p> Performance on <b>OBB</b> task of <b>OHD-SJTU-S</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Method</b></th><th>PL</th><th>SH</th><th><b>AP<sub>50</sub></b></th><th><b>AP<sub>75</sub></b></th><th><b>AP<sub>50:95</sub></b></th></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/R2CNN_Faster-RCNN_Tensorflow">R<sup>2</sup>CNN</a></b></td><td><b>90.91</b></td><td>77.66</td><td>84.28</td><td>55.00</td><td>52.80</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RRPN_Faster-RCNN_Tensorflow">RRPN</a></b></td><td>90.14</td><td>76.13</td><td>83.13</td><td>27.87</td><td>40.74</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-H</a></b></td><td>90.86</td><td>66.32</td><td>78.59</td><td>58.45</td><td>53.07</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-R</a></b></td><td>90.82</td><td><b>88.14</b></td><td><b>89.48</b></td><td>74.62</td><td>61.86</td></tr>
+            <tr><td><b><a href="https://github.com/Thinklab-SJTU/R3Det_Tensorflow">R<sup>3</sup>Det</a></b></td><td>90.82</td><td>85.59</td><td>88.21</td><td>67.13</td><td>56.19</td></tr>
+            <tr><td><b><a href="https://github.com/SJTU-Thinklab-Det/OHDet_Tensorflow">OHDet</a></b></td><td>90.74</td><td>87.59</td><td>89.06</td><td><b>78.55</b></td><td><b>63.94</b></td></tr>
+            </tbody></table>
+            <p></p>
+
+            <br>
+
+            <p> The performance of object heading detection on <b>OHD-SJTU-L</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Task</b></th><th>PL</th><th>SH</th><th>SV</th><th>LV</th><th>HA</th><th>HC</th><th><b>IoU<sub>50</sub></b></th><th><b>IoU<sub>75</sub></b></th><th><b>IoU<sub>50:95</sub></b></th></tr>
+            <tr><td><b>OBB mAP</b></td><td>89.63</td><td>75.88</td><td>46.21</td><td>75.88</td><td>61.43</td><td>33.87</td><td>63.88</td><td>37.45</td><td>36.42</td></tr>
+            <tr><td><b>OHD mAP</b></td><td>59.88</td><td>41.90</td><td>26.21</td><td>35.34</td><td>41.24</td><td>17.53</td><td>37.02</td><td>24.10</td><td>22.46</td></tr>
+            <tr><td><b>Head Accuracy</b></td><td>74.49</td><td>69.71</td><td>62.21</td><td>57.95</td><td>76.66</td><td>49.06</td><td>65.01</td><td>65.77</td><td>64.60</td></tr>
+            </tbody></table>
+            <p></p>
+
+
+            <br>
+
+            <p> The performance of object heading detection on <b>OHD-SJTU-S</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Task</b></th><th>PL</th><th>SH</th><th><b>IoU<sub>50</sub></b></th><th><b>IoU<sub>75</sub></b></th><th><b>IoU<sub>50:95</sub></b></th></tr>
+            <tr><td><b>OBB mAP</b></td><td>90.73</td><td>88.59</td><td>89.66</td><td>75.62</td><td>61.49</td></tr>
+            <tr><td><b>OHD mAP</b></td><td>76.89</td><td>86.40</td><td>81.65</td><td>65.51</td><td>55.09</td></tr>
+            <tr><td><b>Head Accuracy</b></td><td>90.91</td><td>94.87</td><td>92.89</td><td>93.81</td><td>94.25</td></tr>
+            </tbody></table>
+            <p></p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="subtitle"><b>Visualization</b></div>
+    <div class="title_line"></div> 
+    <div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+            Detection examples of our proposed method in large scenarios on OHD-SJTU dataset. Our method can both effectively handle the dense and rotating cases. The blue border in the bounding box represents the predicted head of the object.<br><br>
+
+            <a href="./CSL_GCL_OHDet/P2683.jpg"><img src="./CSL_GCL_OHDet/P0086.jpg" width="500"></a>
+            <a href="./CSL_GCL_OHDet/P2683.jpg"><img src="./CSL_GCL_OHDet/P0841.jpg" width="504"></a><br><br>
+            <a href="./CSL_GCL_OHDet/P2683.jpg"><img src="./CSL_GCL_OHDet/P0961.jpg" width="1010"></a><br><br>
+            <a href="./CSL_GCL_OHDet/P2683.jpg"><img src="./CSL_GCL_OHDet/P37.jpg" width="1010"></a><br><br>
+
+
+        </div>
+      </div>
+    </div>
+    <br><br>
+	
+	<div class="widgetContainer" style="width:300px; margin: 0 auto;">        
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=yZcblN50sSwsCOVmEPYqkPD6Wo-RFHx0E2yb6Ktm_Wk&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+    </div>
+	 
+	<div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2020 <a href="https://yangxue0827.github.io/" rel="nofollow">Xue Yang's Homepage.</a> </div></div>
+
+</a></body></html>

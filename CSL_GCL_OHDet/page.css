@@ -1,0 +1,219 @@
+html{
+    background-color: black
+}
+
+.fake_header{
+    height:70px;
+}
+
+.wrapper{
+    padding-top:50px;
+}
+.subnav{
+    font-size: 18px;
+    color:white;
+    width:12%;
+    height: 100%;
+    background-color:rgb(82,82,82);
+    position: fixed;
+}
+
+.caption{
+    padding-top: 40px;
+    font-size: 30px;
+    text-align: center
+}
+.caption_line{
+    width: 300px;
+    height: 1px;
+    margin:10px auto 40px auto;
+    background: #000000
+    
+}
+.subcaption.caption{
+    padding-top: 10px;
+    padding-bottom: 60px;
+    font-size: 16px;
+    letter-spacing: 0.1em
+}
+
+.date{
+    color: rgb(188,0,0);
+    display: inline-block;
+    width:10%;
+    min-width:100px;
+    text-align: center;
+}
+
+.page_item{
+    padding-bottom: 15px;
+    text-align: justify;
+}
+
+.page_content{
+    width:90%;
+    display: inline-block;
+    padding: 10px 0;
+    text-align: left
+}
+
+.bold{
+    font-weight: 400;
+    display: inline-block;
+}
+
+
+.title_line{
+    background: #000000;
+    height: 1px;
+    width: 148px;
+    margin: 20px 0;
+}
+
+b{
+    font-weight: 400;
+}
+.subtitle{
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin-top: 48px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background: rgb(82, 82, 82);
+    text-align: center;
+    line-height: 50px;
+    color:white;
+    font-size: 12px;
+}
+
+.member_item{
+    display: inline-block;
+    min-width: 200px;
+    border-top: 0;
+}
+
+.member_pos{
+    text-align: center;
+    font-size: 14px;
+}
+
+.member_pic_wrapper{
+    width:100%;
+    margin:0 auto; 
+        padding: 10px;
+
+}
+
+.member_pic{
+    width:100%;
+    height:0;
+    background:url("src/pic.png");
+    background-size: 80px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+#yanjunchi{
+    background:url("src/yanjunchi.png");
+    height:150px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#zhangning{
+    background:url("src/zhangning.png");
+    height:150px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#hongyuan{
+    background:url("src/hongyuan.png");
+    height:150px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#yuncai{
+    background:url("src/yuncailiu.jpg");
+    height:150px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#yinqiang{
+    background:url("src/yinqiang.jpg");
+    height:150px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.member_name{
+    font-size: 18px;
+    padding: 10px 0;
+    text-align: center
+}
+
+.corp_wrapper{
+    padding:40px 30px;
+}
+
+.corp_logo_wrapper{
+    height: 100px;
+}
+.corp_item{
+    padding:10px 10px;
+    max-height: 100px;
+    display: inline-block;
+}
+
+.corp_logo{
+    height:100px;
+}
+
+.course{
+    
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+table{
+    width: 80%;
+    border-width: 2px 0;
+    border-color: rgb(82, 82, 82);
+    border-style: solid;
+    padding:10px 20px;
+    margin:0 auto;
+    border-collapse: collapse;
+}
+
+th, td{
+    border-width:1px 0 0 0 ; 
+    border-color: rgb(82, 82, 82);
+    border-style: solid;
+    padding:10px 20px;
+    margin:0 10px;
+}
+th{
+    background-color: rgb(200,200,200)
+}
+
+.syllabus{
+    width:100%;
+}
+.table_wrapper{
+    width: 100%;
+    text-align: center;
+}
+
+.main_content{
+    width: 100%;
+}
+.anouncement{
+    padding: 0 10%;
+}

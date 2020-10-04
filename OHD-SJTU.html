@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://thinklab.sjtu.edu.cn/OHD-SJTU.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OHD-SJTU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="../image/png" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSL_GCL_OHDet/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSL_GCL_OHDet/page.css">
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>   
+     <link rel="stylesheet" href="./CSL_GCL_OHDet/bootstrap.min.css">
+ 
+</head>
+
+<body>
+ 
+          <script src="./CSL_GCL_OHDet/jquery.min.js.下载"></script>
+      <script src="./CSL_GCL_OHDet/bootstrap.min.js.下载"></script>
+    <div class="wrapper page">
+        <div class="main_content">
+                    <div class="caption"><b>Object Heading Detection Dataset (OHD-SJTU)</b></div>
+        <div class="caption_line"></div>
+
+            <div class="subtitle"><b>Data Description</b></div>
+            <div class="title_line"></div>
+
+    <h4 class="ui top dividing header" id="basics">Data Description</h4>
+    <div class="ui basic segment">
+      <p> OHD-SJTU is our open source new dataset for rotation detection and object heading detection. OHD-SJTU contains two different scale datasets, namely OHD-SJTU-S and OHD-SJTU-L. OHD-SJTU-S is collected publicly from Google Earth with 43 large scene images sized 10,000x10,000 pixels and 16,000x16,000. It contains two object categories (ship and plane) and 4125 instances (3,343 ships and 782 planes). Each object is labeled by an arbitrary quadrilateral, and the first marked point is the head position of the object to facilitate the head prediction. We randomly selected 30 original images as the training and validation set, and 13 images as the testing set. The scenes cover a decent variety of road scenes and typical: cloud occlusion, seamless dense arrangement, strong changes in illumination/exposure, mixed sea and land scenes and large number of interfering objects. In contrast, OHD-SJTU-L adds more categories on the basis of OHD-SJTU-S, such as small vehicle, large vehicle, harbor, and helicopter. The additional data comes from DOTA, but we reprocess the annotations and add the annotations of the object head. According to statistics, OHD-SJTU-L contains six object categories and 113,435 instances. Compared with the AP<sub>50</sub> used by DOTA as the evaluation indicator, OHD-SJTU uses a more stringent AP<sub>50:95</sub> to measure the performance of the method, which poses a further challenge to the high accuracy of the detector.</p>
+
+	<div class="subtitle"><b>Authors</b></div>
+	<div class="title_line"></div>	  
+	<div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+        <ul>
+        <li> <a href="https://yangxue0827.github.io/">Xue Yang</a>, Shanghai Jiao Tong University, China </li>
+        <li> <a href="http://thinklab.sjtu.edu.cn/">Junchi Yan</a> (corresponding author), Shanghai Jiao Tong University, China </li>
+        <li> <a href="http://www.cowarobot.com/">Tao He</a>, COWAROBOT Co., Ltd, China </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle"><b>Download</b></div>
+    <div class="title_line"></div> 
+    <div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+        <ul>
+          <li>OHD-SJTU: <a href="https://pan.baidu.com/s/1cN6B8_Qi3Q5LWYiT3q56bw">Baidu Drive (n5aw),</a></li>
+              - OHD-SJTU-L <br>
+              - OHD-SJTU-S <br>
+              - Development kit <br>
+              - readme.txt
+        </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle"><b>Example Images</b></div>
+    <div class="title_line"></div> 
+    <div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+            Each object is labeled by an arbitrary quadrilateral, and the first marked point is the head position of the object to facilitate the head prediction.<br><br>
+
+            <a href="./CSL_GCL_OHDet/ohd-sjtu-airplane-1.png"><img src="./CSL_GCL_OHDet/ohd-sjtu-airplane-1.png" width="500"></a>
+            <a href="./CSL_GCL_OHDet/ohd-sjtu-airplane-3.png"><img src="./CSL_GCL_OHDet/ohd-sjtu-airplane-3.png" width="500"></a><br><br>
+            <a href="./CSL_GCL_OHDet/ohd-sjtu-ship-1.png"><img src="./CSL_GCL_OHDet/ohd-sjtu-ship-1.png" width="500"></a>
+            <a href="./CSL_GCL_OHDet/ohd-sjtu-ship-2.png"><img src="./CSL_GCL_OHDet/ohd-sjtu-ship-2.png" width="500"></a>
+
+
+        </div>
+      </div>
+    </div>
+
+     
+    <div class="subtitle"><b>Baseline Methods</b></div>
+    <div class="title_line"></div> 
+    <div class="ui feed timeline">
+      <div class="event">
+        <div class="label"><i class="info icon"></i></div>
+        <div class="content">
+
+            <p> We divide the training and validation images into 600x600 subimages with an overlap of 150 pixels and scale it to 800x800. In the process of cropping the image with the sliding window, keeping those objects whose center point is in the subimage. All experiments are based on the same setting, using ResNet101 as the backbone. Except for data augmentation (include random horizontal, vertical flipping, random graying, and random rotation) is used in OHD-SJTU-S, no other tricks are used.</p>
+
+            <p> Performance on <b>OBB</b> task of <b>OHD-SJTU-L</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Method</b></th><th>PL</th><th>SH</th><th>SV</th><th>LV</th><th>HA</th><th>HC</th><th><b>AP<sub>50</sub></b></th><th><b>AP<sub>75</sub></b></th><th><b>AP<sub>50:95</sub></b></th></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/R2CNN_Faster-RCNN_Tensorflow">R<sup>2</sup>CNN</a></b></td><td>89.99</td><td>71.93</td><td>54.00</td><td>65.46</td><td><b>66.36</b></td><td>55.94</td><td>67.28</td><td>32.69</td><td>34.78</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RRPN_Faster-RCNN_Tensorflow">RRPN</a></b></td><td>89.66</td><td>75.35</td><td>50.25</td><td>72.22</td><td>62.99</td><td>45.26</td><td>65.96</td><td>21.24</td><td>30.13</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-H</a></b></td><td><b>90.20</b></td><td>66.99</td><td>53.58</td><td>63.38</td><td>63.75</td><td>53.82</td><td>65.29</td><td>34.59</td><td>35.39</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-R</a></b></td><td>89.99</td><td>77.65</td><td>51.77</td><td><b>81.22</b></td><td>62.85</td><td>52.25</td><td>69.29</td><td>39.07</td><td>38.90</td></tr>
+            <tr><td><b><a href="https://github.com/Thinklab-SJTU/R3Det_Tensorflow">R<sup>3</sup>Det</a></b></td><td>89.89</td><td><b>78.36</b></td><td><b>55.23</b></td><td>78.35</td><td>57.06</td><td>53.50</td><td>68.73</td><td>35.36</td><td>37.10</td></tr>
+            <tr><td><b><a href="https://github.com/SJTU-Thinklab-Det/OHDet_Tensorflow">OHDet</a></b></td><td>89.72</td><td>77.40</td><td>52.89</td><td>78.72</td><td>63.76</td><td><b>54.62</b></td><td><b>69.52</b></td><td><b>41.89</b></td><td><b>39.51</b></td></tr>
+            </tbody></table>
+            <p></p>
+            
+            <br>
+
+            <p> Performance on <b>OBB</b> task of <b>OHD-SJTU-S</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Method</b></th><th>PL</th><th>SH</th><th><b>AP<sub>50</sub></b></th><th><b>AP<sub>75</sub></b></th><th><b>AP<sub>50:95</sub></b></th></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/R2CNN_Faster-RCNN_Tensorflow">R<sup>2</sup>CNN</a></b></td><td><b>90.91</b></td><td>77.66</td><td>84.28</td><td>55.00</td><td>52.80</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RRPN_Faster-RCNN_Tensorflow">RRPN</a></b></td><td>90.14</td><td>76.13</td><td>83.13</td><td>27.87</td><td>40.74</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-H</a></b></td><td>90.86</td><td>66.32</td><td>78.59</td><td>58.45</td><td>53.07</td></tr>
+            <tr><td><b><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation">RetinaNet-R</a></b></td><td>90.82</td><td><b>88.14</b></td><td><b>89.48</b></td><td>74.62</td><td>61.86</td></tr>
+            <tr><td><b><a href="https://github.com/Thinklab-SJTU/R3Det_Tensorflow">R<sup>3</sup>Det</a></b></td><td>90.82</td><td>85.59</td><td>88.21</td><td>67.13</td><td>56.19</td></tr>
+            <tr><td><b><a href="https://github.com/SJTU-Thinklab-Det/OHDet_Tensorflow">OHDet</a></b></td><td>90.74</td><td>87.59</td><td>89.06</td><td><b>78.55</b></td><td><b>63.94</b></td></tr>
+            </tbody></table>
+            <p></p>
+
+            <br>
+
+            <p> The performance of object heading detection on <b>OHD-SJTU-L</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Task</b></th><th>PL</th><th>SH</th><th>SV</th><th>LV</th><th>HA</th><th>HC</th><th><b>IoU<sub>50</sub></b></th><th><b>IoU<sub>75</sub></b></th><th><b>IoU<sub>50:95</sub></b></th></tr>
+            <tr><td><b>OBB mAP</b></td><td>89.63</td><td>75.88</td><td>46.21</td><td>75.88</td><td>61.43</td><td>33.87</td><td>63.88</td><td>37.45</td><td>36.42</td></tr>
+            <tr><td><b>OHD mAP</b></td><td>59.88</td><td>41.90</td><td>26.21</td><td>35.34</td><td>41.24</td><td>17.53</td><td>37.02</td><td>24.10</td><td>22.46</td></tr>
+            <tr><td><b>Head Accuracy</b></td><td>74.49</td><td>69.71</td><td>62.21</td><td>57.95</td><td>76.66</td><td>49.06</td><td>65.01</td><td>65.77</td><td>64.60</td></tr>
+            </tbody></table>
+            <p></p>
+
+
+            <br>
+
+            <p> The performance of object heading detection on <b>OHD-SJTU-S</b>:
+            
+            <style type="text/css">
+            table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+            table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+            table.tftable tr {background-color:#d4e3e5;}
+            table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+            </style>
+
+            </p><table id="tfhover" class="tftable" border="1">
+            <tbody><tr><th><b>Task</b></th><th>PL</th><th>SH</th><th><b>IoU<sub>50</sub></b></th><th><b>IoU<sub>75</sub></b></th><th><b>IoU<sub>50:95</sub></b></th></tr>
+            <tr><td><b>OBB mAP</b></td><td>90.73</td><td>88.59</td><td>89.66</td><td>75.62</td><td>61.49</td></tr>
+            <tr><td><b>OHD mAP</b></td><td>76.89</td><td>86.40</td><td>81.65</td><td>65.51</td><td>55.09</td></tr>
+            <tr><td><b>Head Accuracy</b></td><td>90.91</td><td>94.87</td><td>92.89</td><td>93.81</td><td>94.25</td></tr>
+            </tbody></table>
+            <p></p>
+
+        </div>
+      </div>
+    </div>
+    
+    <br><br>
+	
+	<div class="widgetContainer" style="width:300px; margin: 0 auto;">        
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=yZcblN50sSwsCOVmEPYqkPD6Wo-RFHx0E2yb6Ktm_Wk&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+    </div>
+	 
+	<div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2020 <a href="https://yangxue0827.github.io/" rel="nofollow">Xue Yang's Homepage.</a> </div></div>
+
+</a></body></html>
