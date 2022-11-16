@@ -11,3 +11,5 @@ __pycache__/
 /lover/
 
 files/~$ngXue-CV.doc
+images/.DS_Store
+*/.DS_Store
