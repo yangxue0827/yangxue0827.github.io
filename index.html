@@ -12,7 +12,9 @@
   <link href="./files/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
   <link rel="shortcut icon" href="./images/yangxue.jpg">
-<script type="text/javascript" src="./files/jquery-1.12.4.min.js.下载"></script><style>@-moz-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-webkit-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-o-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}embed,object{animation-duration:.001s;-ms-animation-duration:.001s;-moz-animation-duration:.001s;-webkit-animation-duration:.001s;-o-animation-duration:.001s;animation-name:nodeInserted;-ms-animation-name:nodeInserted;-moz-animation-name:nodeInserted;-webkit-animation-name:nodeInserted;-o-animation-name:nodeInserted;}</style></head>
+<script type="text/javascript" src="./files/jquery-1.12.4.min.js.下载"></script><style>@-moz-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-webkit-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-o-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}embed,object{animation-duration:.001s;-ms-animation-duration:.001s;-moz-animation-duration:.001s;-webkit-animation-duration:.001s;-o-animation-duration:.001s;animation-name:nodeInserted;-ms-animation-name:nodeInserted;-moz-animation-name:nodeInserted;-webkit-animation-name:nodeInserted;-o-animation-name:nodeInserted;}</style>
+
+</head>
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
   
   <div class="navbar-fixed">
@@ -1747,8 +1749,8 @@
 <script src="./files/aos.js"></script>
 <script src="./init.js"></script>
 <script>
-    window.onload = function () {
-    // $(document).ready(function () {
+    // window.onload = function () {
+    $(document).ready(function () {
         var gsDataBaseUrl = 'https://raw.githubusercontent.com/yangxue0827/yangxue0827.github.io/'
         $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
 
@@ -1761,19 +1763,9 @@
                 element.innerHTML = numCitations;
             });
         });
-    }
+    });
 </script>
 
-<script>
- window.difyChatbotConfig = {
-  token: 'ul7V4zpZTlTe3thZ'
- }
-</script>
-<script
- src="https://udify.app/embed.min.js"
- id="ul7V4zpZTlTe3thZ"
- defer>
-</script>
 <style>
   #dify-chatbot-bubble-button {
     background-color: #1C64F2 !important;
@@ -1783,5 +1775,17 @@
     height: 40rem !important;
   }
 </style>
+
+<script>
+ window.difyChatbotConfig = {
+  token: 'ul7V4zpZTlTe3thZ'
+ }
+</script>
+<script 
+  src="https://udify.app/embed.min.js" 
+  id="ul7V4zpZTlTe3thZ"
+  defer>
+</script>
+
 
 </div><div class="jvectormap-tip"></div></body></html>
