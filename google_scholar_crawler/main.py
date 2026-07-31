@@ -6,9 +6,11 @@ from scholarly._proxy_generator import MaxTriesExceededException
 
 # Setup proxy
 pg = ProxyGenerator()
-pg.FreeProxies()  # Use free rotating proxies
-scholarly.use_proxy(pg)
-
+try:
+    pg.FreeProxies()
+    scholarly.use_proxy(pg)
+except StopIteration:
+    print("Free proxies unavailable, falling back to direct connection")
 
 try:
     print("正在查找作者信息...")
