@@ -7,7 +7,7 @@ from scholarly._proxy_generator import MaxTriesExceededException
 # Setup proxy
 pg = ProxyGenerator()
 pg.FreeProxies()  # Use free rotating proxies
-scholarly.use_proxy(None)
+scholarly.use_proxy(pg)
 
 
 try:
